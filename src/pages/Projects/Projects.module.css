@@ -1,0 +1,151 @@
+.projects {
+  padding: 40px;
+  /* background: linear-gradient(
+    to right,
+    var(--background-color),
+    var(--accent-color) 50%
+  ); */
+  color: var(--primary-color);
+  text-align: left;
+}
+
+.sectionTitle {
+  border-bottom: 2px solid var(--accent-color);
+  font-size: 40px;
+}
+
+.projectSection {
+  margin-bottom: 40px;
+  text-align: justify;
+  line-height: 1.6;
+  background: var(--background-color);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projectSection:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.projectText {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.projectSection ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.projectSection ul li {
+  margin-bottom: 10px;
+}
+
+.projectSection a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.projectSection a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .projects {
+    padding: 20px;
+  }
+
+  .sectionTitle {
+    font-size: 18px;
+  }
+
+  .projectSection h3 {
+    font-size: 16px;
+  }
+
+  .projectText,
+  .projectSection ul li {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .projects {
+    padding: 30px;
+  }
+
+  .sectionTitle {
+    font-size: 20px;
+  }
+
+  .projectSection h3 {
+    font-size: 18px;
+  }
+
+  .projectText,
+  .projectSection ul li {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .projects {
+    padding: 40px;
+  }
+
+  .sectionTitle {
+    font-size: 22px;
+  }
+
+  .projectSection h3 {
+    font-size: 20px;
+  }
+
+  .projectText,
+  .projectSection ul li {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .projects {
+    padding: 50px;
+  }
+
+  .sectionTitle {
+    font-size: 24px;
+  }
+
+  .projectSection h3 {
+    font-size: 22px;
+  }
+
+  .projectText,
+  .projectSection ul li {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1281px) {
+  .projects {
+    padding: 60px;
+  }
+
+  .sectionTitle {
+    font-size: 40px;
+  }
+
+  .projectSection h3 {
+    font-size: 24px;
+  }
+
+  .projectText,
+  .projectSection ul li {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+:root {
+  --primary-color: #2f3b5c;
+  --secondary-color: #605671;
+  --accent-color: #9b8999;
+  --background-color: #edebeb;
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Playfair Display", serif;
+  --font-primary-size: 16px;
+  --font-secondary-size: 40px;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-primary-size);
+  color: var(--primary-color);
+  background: linear-gradient(
+    to right,
+    var(--background-color),
+    var(--accent-color) 50%
+  );
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  font-size: var(--font-secondary-size);
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+p {
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+}
+
+button {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: var(--accent-color);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.element {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.toTopButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  body, h1, h2, h3, h4, h5, h6, p {
+    font-size: 14px;
+  }
+
+  .toTopButton {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,192 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px;
+  /* background: linear-gradient(
+    to right,
+    var(--background-color),
+    var(--accent-color) 50%
+  ); */
+  gap: 20px;
+  position: relative;
+}
+
+.sectionTitle {
+  padding-top: 80px;
+  font-size: 40px;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.textContent {
+  flex: 1;
+  line-height: 1.4;
+  padding: 0 20px;
+}
+
+.welcomeText {
+  margin-bottom: 10px;
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: 24px;
+  color: var(--accent-color);
+  position: absolute;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+}
+
+.profileImage {
+  max-width: 0;
+  border-radius: 20%;
+  transition: max-width 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+
+.imageContainer:hover .arrow {
+  transform: translateX(-30px);
+}
+
+.imageContainer:hover .profileImage {
+  max-width: 400px;
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .home {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .sectionTitle {
+    font-size: 18px;
+  }
+  
+  .textContent,
+  .imageContainer {
+    width: 100%;
+    padding: 0;
+  }
+
+  .textContent {
+    order: 2;
+    padding: 20px;
+  }
+
+  .imageContainer {
+    order: 1;
+    margin-bottom: 20px;
+  }
+
+  .profileImage {
+    max-width: 0;
+  }
+
+  .imageContainer:hover .profileImage {
+    max-width: 150px;
+  }
+
+  .arrow {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .textContent,
+  .imageContainer {
+    width: 100%;
+    padding: 0;
+  }
+
+  .textContent {
+    order: 2;
+    padding: 20px;
+  }
+
+  .imageContainer {
+    order: 1;
+    margin-bottom: 20px;
+  }
+
+  .profileImage {
+    max-width: 0;
+  }
+
+  .imageContainer:hover .profileImage {
+    max-width: 200px;
+  }
+
+  .arrow {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home {
+    padding: 30px;
+  }
+
+  .profileImage {
+    max-width: 0;
+  }
+
+  .imageContainer:hover .profileImage {
+    max-width: 250px;
+  }
+
+  .arrow {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .home {
+    padding: 35px;
+  }
+
+  .profileImage {
+    max-width: 0;
+  }
+
+  .imageContainer:hover .profileImage {
+    max-width: 275px;
+  }
+
+  .arrow {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1281px) {
+  .home {
+    padding: 40px;
+  }
+
+  .profileImage {
+    max-width: 0;
+  }
+
+  .imageContainer:hover .profileImage {
+    max-width: 300px;
+  }
+
+  .arrow {
+    font-size: 24px;
+  }
+}
