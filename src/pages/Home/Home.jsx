@@ -34,10 +34,9 @@ function Home() {
         </p>
       </article>
       <div className={styles.imageContainer}>
-        <div className={styles.arrow}>➔</div>
         <img
           src={profileImage}
-          alt="Magdalena Głowienka&apos;s profile"
+          alt="Magdalena Głowienka's profile"
           className={styles.profileImage}
         />
       </div>

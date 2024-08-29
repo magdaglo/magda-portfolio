@@ -4,25 +4,12 @@ import styles from "./Projects.module.css";
 function Projects() {
   return (
     <section className={styles.projects}>
-      <h2 className={styles.sectionTitle}>My Projects</h2>
-
-      <article className={styles.projectSection}>
-        <h3 className={styles.secondTitle}>Small Projects</h3>
-        <p className={styles.projectText}>
-          During my learning journey, I completed several smaller projects that helped me build a strong foundation in JavaScript and React
-        </p>
-        <ul>
-          <li>Todo List App</li>
-          <li>Weather App</li>
-          <li>Quiz Game</li>
-          <li>Simple Calculator</li>
-        </ul>
-      </article>
+      <h2 className={styles.sectionTitle}>Projects</h2>
 
       <article className={styles.projectSection}>
         <h3 className={styles.secondTitle}>Large Project: BarterNet</h3>
         <p className={styles.projectText}>
-          The &quot;BarterNet&quot; project was a group effort, where we built a platform for exchanging goods and services
+          The &quot;BarterNet&quot; project was a group effort, where we built a platform for exchanging goods and services.
         </p>
         <ul>
           <li>
@@ -43,6 +30,37 @@ function Projects() {
               Live Version
             </a>
           </li>
+        </ul>
+      </article>
+
+      <article className={styles.projectSection}>
+        <h3 className={styles.secondTitle}>Tools I mastered</h3>
+        <ul className={styles.techList}>
+          <li>Visual Studio Code</li>
+          <li>GitHub</li>
+          <li>Jira</li>
+          <li>Google Chrome Developer Tools</li>
+          <li>Node.js</li>
+          <li>Jest</li>
+          <li>ESLint</li>
+          <li>Cypress</li>
+        </ul>
+      </article>
+
+      <article className={styles.projectSection}>
+        <h3 className={styles.secondTitle}>Technologies I worked with</h3>
+        <ul className={styles.techList}>
+          <li>JavaScript</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>TypeScript</li>
+          <li>REST API</li>
+          <li>JSON</li>
+          <li>AJAX</li>
+          <li>RWD (Responsive Web Design)</li>
+          <li>Git</li>
+          <li>React</li>
+          <li>Firebase</li>
         </ul>
       </article>
     </section>
