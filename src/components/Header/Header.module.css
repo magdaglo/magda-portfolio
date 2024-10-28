@@ -1,34 +1,20 @@
 .header {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
   height: 60px;
+  background: var(--primary-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
-  background-color: var(--primary-color);
-  color: #fff;
+  padding: 0 20px;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(
-    90deg,
-    var(--primary-color),
-    var(--secondary-color)
-  );
 }
 
 .logo {
-  font-size: 2rem;
-  font-family: var(--font-secondary);
+  font-size: 1.5rem;
   color: #fff;
   text-decoration: none;
-  transition: transform 0.3s ease;
-}
-
-.logo:hover {
-  transform: scale(1.05);
 }
 
 .navLinks {
@@ -38,116 +24,33 @@
 }
 
 .navLinks a {
-  position: relative;
-  text-decoration: none;
   color: #fff;
+  text-decoration: none;
   padding: 5px 0;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
+  position: relative;
 }
 
 .navLinks a:hover {
   color: var(--accent-color);
-  border-bottom: 2px solid var(--accent-color);
 }
 
-@media (max-width: 480px) {
-  .header {
-    flex-direction: column;
-    height: auto;
-    padding: 0.5rem;
-  }
-
-  .logo {
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-  }
-
-  .navLinks {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .navLinks a {
-    font-size: 1rem;
-  }
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s;
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    height: auto;
-    padding: 0.5rem;
-  }
-
-  .logo {
-    margin-bottom: 0.5rem;
-    font-size: 1.75rem;
-  }
-
-  .navLinks {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    width: 100%;
-  }
-
-  .navLinks a {
-    font-size: 1.1rem;
-  }
+.navLinks a:hover::after {
+  width: 100%;
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .header {
-    padding: 0.75rem;
-  }
-
-  .logo {
-    font-size: 2rem;
-  }
-
+@media (max-width: 768px) {
   .navLinks {
-    gap: 20px;
-  }
-
-  .navLinks a {
-    font-size: 1.2rem;
-  }
-}
-
-@media (min-width: 1025px) and (max-width: 1280px) {
-  .header {
-    padding: 1rem 2rem;
-  }
-
-  .logo {
-    font-size: 2.25rem;
-  }
-
-  .navLinks {
-    gap: 25px;
-  }
-
-  .navLinks a {
-    font-size: 1.25rem;
-  }
-}
-
-@media (min-width: 1281px) {
-  .header {
-    padding: 1.25rem 2.5rem;
-  }
-
-  .logo {
-    font-size: 2.5rem;
-  }
-
-  .navLinks {
-    gap: 30px;
-  }
-
-  .navLinks a {
-    font-size: 1.5rem;
+    display: none;
   }
 }

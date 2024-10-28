@@ -1,59 +1,58 @@
-import React, { useState } from "react";
-import emailjs from "emailjs-com";
-import { FaGithub, FaLinkedin } from "react-icons/fa"; // Import ikon
-import styles from "./Contact.module.css";
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import styles from './Contact.module.css';
 
 function Contact() {
-  const [isSend, setIsSend] = useState(false);
+  const [isSent, setIsSent] = useState(false);
 
   function sendEmail(e) {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "service_aah4lck",
-        "template_vputq6l",
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         e.target,
-        "KBte9SROAx0ptobcE"
+        process.env.REACT_APP_EMAILJS_USER_ID
       )
       .then(
-        (result) => {
-          console.log(result.text);
-          setIsSend(true);
+        () => {
+          setIsSent(true);
         },
         (error) => {
-          console.log(error.text);
+          console.error(error.text);
         }
       );
     e.target.reset();
   }
 
   return (
-    <section className={styles.contact}>
+    <section className={styles.contact} id="contact">
       <h2 className={styles.sectionTitle}>Contact Me</h2>
       <form className={styles.contactForm} onSubmit={sendEmail}>
         <div className={styles.formGroup}>
           <label htmlFor="name">Name</label>
-          <input type="text" name="from_name" id="name" required />
+          <input type="text" name="from_name" id="name" required placeholder="Your Name" />
         </div>
 
         <div className={styles.formGroup}>
           <label htmlFor="email">Email</label>
-          <input type="email" name="from_email" id="email" required />
+          <input type="email" name="from_email" id="email" required placeholder="Your Email" />
         </div>
 
         <div className={styles.formGroup}>
           <label htmlFor="message">Message</label>
-          <textarea name="message" id="message" required />
+          <textarea name="message" id="message" required placeholder="Your Message"></textarea>
         </div>
         <button type="submit" className={styles.submitButton}>
-          Text Me!
+          Send Message
         </button>
       </form>
-      {isSend && <p className={styles.successMessage}>Sent successfully!</p>}
+      {isSent && <p className={styles.successMessage}>Your message has been sent!</p>}
 
       <div className={styles.findMe}>
-        <h3>You will find me here</h3>
+        <h3>You can also find me here:</h3>
         <div className={styles.socialLinks}>
           <a
             href="https://github.com/magdaglo"

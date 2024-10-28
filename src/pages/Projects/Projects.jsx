@@ -1,68 +1,73 @@
 import React from "react";
 import styles from "./Projects.module.css";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import barterNetImage from "../../assets/barternet.png";
+// import placeholderImage from "../../assets/placeholder.png"; // Placeholder image for additional projects
 
 function Projects() {
+  const projects = [
+    {
+      title: "BarterNet",
+      description:
+        "A platform for exchanging goods and services, built collaboratively with a team.",
+      image: barterNetImage,
+      links: {
+        github: "https://github.com/infoshareacademy/jfdzr13-team-yellow",
+        live: "https://barternet.netlify.app/",
+      },
+    },
+    // {
+    //   title: "Project Two",
+    //   description: "A brief description of your second project.",
+    //   image: placeholderImage,
+    //   links: {
+    //     github: "https://github.com/yourusername/project-two",
+    //     live: "https://project-two-live-demo.com",
+    //   },
+    // },
+    // Add more projects as needed
+  ];
+
   return (
-    <section className={styles.projects}>
+    <section className={styles.projects} id="projects">
       <h2 className={styles.sectionTitle}>Projects</h2>
-
-      <article className={styles.projectSection}>
-        <h3 className={styles.secondTitle}>Large Project: BarterNet</h3>
-        <p className={styles.projectText}>
-          The &quot;BarterNet&quot; project was a group effort, where we built a platform for exchanging goods and services.
-        </p>
-        <ul>
-          <li>
-            <a
-              href="https://github.com/infoshareacademy/jfdzr13-team-yellow.git"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub Repository
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://barternet.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Live Version
-            </a>
-          </li>
-        </ul>
-      </article>
-
-      <article className={styles.projectSection}>
-        <h3 className={styles.secondTitle}>Tools I mastered</h3>
-        <ul className={styles.techList}>
-          <li>Visual Studio Code</li>
-          <li>GitHub</li>
-          <li>Jira</li>
-          <li>Google Chrome Developer Tools</li>
-          <li>Node.js</li>
-          <li>Jest</li>
-          <li>ESLint</li>
-          <li>Cypress</li>
-        </ul>
-      </article>
-
-      <article className={styles.projectSection}>
-        <h3 className={styles.secondTitle}>Technologies I worked with</h3>
-        <ul className={styles.techList}>
-          <li>JavaScript</li>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>TypeScript</li>
-          <li>REST API</li>
-          <li>JSON</li>
-          <li>AJAX</li>
-          <li>RWD (Responsive Web Design)</li>
-          <li>Git</li>
-          <li>React</li>
-          <li>Firebase</li>
-        </ul>
-      </article>
+      <div className={styles.projectsGrid}>
+        {projects.map((project, index) => (
+          <article className={styles.projectCard} key={index}>
+            <div className={styles.imageContainer}>
+              <img
+                src={project.image}
+                alt={project.title}
+                className={styles.projectImage}
+              />
+              <div className={styles.overlay}>
+                <div className={styles.projectLinks}>
+                  <a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                  >
+                    <FaGithub />
+                  </a>
+                  <a
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Live Demo"
+                  >
+                    <FaExternalLinkAlt />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className={styles.projectContent}>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }

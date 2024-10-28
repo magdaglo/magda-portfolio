@@ -1,20 +1,20 @@
-import React from "react";
-import { Link } from "react-scroll";
-import styles from "./Header.module.css";
+import React from 'react';
+import { Link } from 'react-scroll';
+import styles from './Header.module.css';
 
 function Header() {
   return (
     <header className={styles.header} aria-label="Main Navigation">
       <div>
-        <Link to="home" smooth duration={500} className={styles.logo}>
-          Magda&apos;s Portfolio
+        <Link to="home" smooth duration={500} className={styles.logo} aria-label="Go to Home">
+          Magda's Portfolio
         </Link>
       </div>
       <nav>
         <ul className={styles.navLinks}>
-          {["home", "projects", "contact"].map((section) => (
+          {['home', 'projects', 'contact'].map((section) => (
             <li key={section}>
-              <Link to={section} smooth duration={500}>
+              <Link to={section} smooth duration={500} aria-label={`Go to ${section}`}>
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </Link>
             </li>

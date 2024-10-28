@@ -1,161 +1,137 @@
 .projects {
-  padding: 40px;
-  /* background: linear-gradient(
-    to right,
-    var(--background-color),
-    var(--accent-color) 50%
-  ); */
-  color: var(--primary-color);
-  text-align: left;
+  padding: 80px 20px;
+  background-color: var(--background-color);
 }
 
 .sectionTitle {
-  border-bottom: 2px solid var(--accent-color);
-  font-size: 40px;
-}
-
-.projectSection {
-  margin-bottom: 40px;
-  text-align: justify;
-  line-height: 1.6;
-  background: var(--background-color);
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.projectSection:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.projectText {
-  margin-bottom: 20px;
-  font-size: 16px;
-}
-
-.projectSection ul {
-  list-style-type: disc;
-  margin-left: 20px;
-}
-
-.projectSection ul li {
-  margin-bottom: 10px;
-}
-
-.projectSection a {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 2.5rem;
   color: var(--primary-color);
-  text-decoration: none;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.projectCard {
+  background-color: #fff;
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projectCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  /* Set a fixed height for the image container */
+  height: 500px; 
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(45, 45, 45, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageContainer:hover .overlay {
+  opacity: 1;
+}
+
+.projectLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.projectLinks a {
+  color: #fff;
+  font-size: 2rem;
   transition: color 0.3s;
 }
 
-.projectSection a:hover {
-  color: var(--secondary-color);
-  text-decoration: underline;
-}
-.techList {
-  list-style-type: disc;
-  margin-left: 20px;
-  margin-bottom: 20px;
+.projectLinks a:hover {
+  color: var(--accent-color);
 }
 
-.techList li {
-  margin-bottom: 10px;
-  font-size: 16px;
+.projectContent {
+  padding: 20px;
+}
+
+.projectContent h3 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+
+.projectContent p {
+  color: var(--secondary-color);
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 60px 10px;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .projectContent h3 {
+    font-size: 1.5rem;
+  }
+
+  .projectLinks a {
+    font-size: 1.5rem;
+  }
+
+  .imageContainer {
+    height: 180px; /* Adjust for smaller screens */
+  }
 }
 
 @media (max-width: 480px) {
   .projects {
-    padding: 20px;
+    padding: 40px 5px;
   }
 
   .sectionTitle {
-    font-size: 18px;
+    font-size: 1.8rem;
   }
 
-  .projectSection h3 {
-    font-size: 16px;
+  .projectContent h3 {
+    font-size: 1.2rem;
   }
 
-  .projectText,
-  .projectSection ul li {
-    font-size: 14px;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  .projects {
-    padding: 30px;
+  .projectLinks a {
+    font-size: 1.2rem;
   }
 
-  .sectionTitle {
-    font-size: 20px;
-  }
-
-  .projectSection h3 {
-    font-size: 18px;
-  }
-
-  .projectText,
-  .projectSection ul li {
-    font-size: 15px;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .projects {
-    padding: 40px;
-  }
-
-  .sectionTitle {
-    font-size: 22px;
-  }
-
-  .projectSection h3 {
-    font-size: 20px;
-  }
-
-  .projectText,
-  .projectSection ul li {
-    font-size: 16px;
-  }
-}
-
-@media (min-width: 1025px) and (max-width: 1280px) {
-  .projects {
-    padding: 50px;
-  }
-
-  .sectionTitle {
-    font-size: 24px;
-  }
-
-  .projectSection h3 {
-    font-size: 22px;
-  }
-
-  .projectText,
-  .projectSection ul li {
-    font-size: 17px;
-  }
-}
-
-@media (min-width: 1281px) {
-  .projects {
-    padding: 60px;
-  }
-
-  .sectionTitle {
-    font-size: 40px;
-  }
-
-  .projectSection h3 {
-    font-size: 24px;
-  }
-
-  .projectText,
-  .projectSection ul li {
-    font-size: 18px;
+  .imageContainer {
+    height: 150px; /* Adjust for smaller screens */
   }
 }

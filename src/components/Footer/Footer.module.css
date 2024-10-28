@@ -1,61 +1,21 @@
 .footer {
   width: 100%;
-  background-color: var(--primary-color);
+  background: var(--primary-color);
   text-align: center;
   padding: 20px 0;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(
-    90deg,
-    var(--primary-color),
-    var(--secondary-color)
-  );
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
+  position: relative;
 }
 
 .footerText {
-  font-size: 14px;
   color: #fff;
-  margin: 0;
+  margin: 5px 0;
 }
 
 .footer a {
-  color: #fff;
-  text-decoration: underline;
-}
-
-.footer a:hover {
   color: var(--accent-color);
   text-decoration: none;
 }
 
-@media (max-width: 480px) {
-  .footer {
-    padding: 6px 0;
-    font-size: 11px;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  .footer {
-    padding: 8px 0;
-    font-size: 12px;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .footer {
-    padding: 6px 0;
-    font-size: 12px;
-  }
-}
-
-@media (min-width: 1025px) {
-  .footer {
-    padding: 6px 0;
-    font-size: 13px;
-  }
+.footer a:hover {
+  text-decoration: underline;
 }

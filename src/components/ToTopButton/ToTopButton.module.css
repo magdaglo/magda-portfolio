@@ -1,0 +1,18 @@
+.toTopButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .toTopButton:hover {
+    background-color: var(--secondary-color);
+  }
+  
