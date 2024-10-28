@@ -3,10 +3,9 @@
   --secondary-color: #4f4f4f;
   --accent-color: #b3b3b3;
   --background-color: #f7f7f7;
-  --font-primary: "Poppins", sans-serif;
-  --font-secondary: "Playfair Display", serif;
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Playfair Display', serif;
 }
-
 
 body {
   font-family: var(--font-primary);
@@ -15,9 +14,14 @@ body {
   margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-secondary);
-  color: var(--secondary-color);
+  color: var(--primary-color);
   margin-bottom: 20px;
 }
 

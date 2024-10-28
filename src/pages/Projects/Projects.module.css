@@ -12,7 +12,7 @@
 
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px;
 }
 
@@ -32,8 +32,7 @@
 .imageContainer {
   position: relative;
   overflow: hidden;
-  /* Set a fixed height for the image container */
-  height: 500px; 
+  height: 300px;
 }
 
 .projectImage {
@@ -110,7 +109,7 @@
   }
 
   .imageContainer {
-    height: 180px; /* Adjust for smaller screens */
+    height: 180px;
   }
 }
 
@@ -132,6 +131,6 @@
   }
 
   .imageContainer {
-    height: 150px; /* Adjust for smaller screens */
+    height: 150px;
   }
 }

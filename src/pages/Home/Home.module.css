@@ -13,7 +13,7 @@
 
 .profileImage {
   max-width: 250px;
-  border-radius: 1%;
+  border-radius: 0;
 }
 
 .textContent {
@@ -38,5 +38,6 @@
 
   .textContent {
     padding: 0;
+    text-align: center;
   }
 }

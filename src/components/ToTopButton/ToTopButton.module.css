@@ -1,18 +1,25 @@
 .toTopButton {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 20px;
-    transition: background-color 0.3s;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s;
+  z-index: 1000;
+}
+
+.toTopButton:hover {
+  background-color: var(--secondary-color);
+}
+
+@media (max-width: 480px) {
+  .toTopButton {
+    padding: 8px;
+    font-size: 18px;
   }
-  
-  .toTopButton:hover {
-    background-color: var(--secondary-color);
-  }
-  
+}

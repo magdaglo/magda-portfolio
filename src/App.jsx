@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
+import { Element, Events, scrollSpy } from 'react-scroll';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
