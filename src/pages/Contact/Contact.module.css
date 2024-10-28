@@ -53,6 +53,13 @@
   margin-top: 20px;
 }
 
+.errorMessage {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
 .findMe {
   text-align: center;
   margin-top: 60px;

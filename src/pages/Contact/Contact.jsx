@@ -5,26 +5,38 @@ import styles from './Contact.module.css';
 
 function Contact() {
   const [isSent, setIsSent] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   function sendEmail(e) {
     e.preventDefault();
 
+    console.log('Service ID:', import.meta.env.VITE_EMAILJS_SERVICE_ID);
+    console.log('Template ID:', import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+    console.log('Public Key:', import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+
+    setIsLoading(true);
+
     emailjs
       .sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         e.target,
-        process.env.REACT_APP_EMAILJS_USER_ID
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
-        () => {
+        (result) => {
+          console.log('Email successfully sent!', result.text);
           setIsSent(true);
+          e.target.reset();
+          setIsLoading(false);
         },
         (error) => {
-          console.error(error.text);
+          console.error('There was an error sending the email:', error.text);
+          setErrorMessage('An error occurred while sending the message. Please try again.');
+          setIsLoading(false);
         }
       );
-    e.target.reset();
   }
 
   return (
@@ -45,11 +57,12 @@ function Contact() {
           <label htmlFor="message">Message</label>
           <textarea name="message" id="message" required placeholder="Your Message"></textarea>
         </div>
-        <button type="submit" className={styles.submitButton}>
-          Send Message
+        <button type="submit" className={styles.submitButton} disabled={isLoading}>
+          {isLoading ? 'Sending...' : 'Send Message'}
         </button>
       </form>
       {isSent && <p className={styles.successMessage}>Your message has been sent!</p>}
+      {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
 
       <div className={styles.findMe}>
         <h3>You can also find me here:</h3>
