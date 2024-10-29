@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Element, Events, scrollSpy } from 'react-scroll';
+import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
@@ -18,6 +19,7 @@ const App = () => {
   }, []);
 
   return (
+    <HelmetProvider>
     <div className="container">
       <Header />
       <main>
@@ -34,6 +36,7 @@ const App = () => {
       <ToTopButton />
       <Footer />
     </div>
+    </HelmetProvider>
   );
 };
 

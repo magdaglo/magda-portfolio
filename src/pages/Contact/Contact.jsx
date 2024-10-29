@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import emailjs from 'emailjs-com';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import styles from './Contact.module.css';
@@ -10,10 +11,6 @@ function Contact() {
 
   function sendEmail(e) {
     e.preventDefault();
-
-    console.log('Service ID:', import.meta.env.VITE_EMAILJS_SERVICE_ID);
-    console.log('Template ID:', import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
-    console.log('Public Key:', import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
     setIsLoading(true);
 
@@ -41,21 +38,57 @@ function Contact() {
 
   return (
     <section className={styles.contact} id="contact">
-      <h2 className={styles.sectionTitle}>Contact Me</h2>
+      <Helmet>
+        <title>Contact - Magdalena Głowienka</title>
+        <meta
+          name="description"
+          content="Get in touch with Magdalena Głowienka, Frontend Developer. Send a message or connect via social media."
+        />
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Contact - Magdalena Głowienka" />
+        <meta
+          property="og:description"
+          content="Reach out to Magdalena Głowienka for collaborations or inquiries."
+        />
+        <meta property="og:image" content="URL_TO_YOUR_IMAGE" />
+        <meta property="og:url" content="https://your-domain.com/contact" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+      <h1 className={styles.sectionTitle}>Contact Me</h1>
       <form className={styles.contactForm} onSubmit={sendEmail}>
         <div className={styles.formGroup}>
           <label htmlFor="name">Name</label>
-          <input type="text" name="from_name" id="name" required placeholder="Your Name" />
+          <input
+            type="text"
+            name="from_name"
+            id="name"
+            required
+            placeholder="Your Name"
+            aria-label="Your Name"
+          />
         </div>
 
         <div className={styles.formGroup}>
           <label htmlFor="email">Email</label>
-          <input type="email" name="from_email" id="email" required placeholder="Your Email" />
+          <input
+            type="email"
+            name="from_email"
+            id="email"
+            required
+            placeholder="Your Email"
+            aria-label="Your Email"
+          />
         </div>
 
         <div className={styles.formGroup}>
           <label htmlFor="message">Message</label>
-          <textarea name="message" id="message" required placeholder="Your Message"></textarea>
+          <textarea
+            name="message"
+            id="message"
+            required
+            placeholder="Your Message"
+            aria-label="Your Message"
+          ></textarea>
         </div>
         <button type="submit" className={styles.submitButton} disabled={isLoading}>
           {isLoading ? 'Sending...' : 'Send Message'}
@@ -65,7 +98,7 @@ function Contact() {
       {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
 
       <div className={styles.findMe}>
-        <h3>You can also find me here:</h3>
+        <h2>You can also find me here:</h2>
         <div className={styles.socialLinks}>
           <a
             href="https://github.com/magdaglo"
@@ -76,7 +109,7 @@ function Contact() {
             <FaGithub className={styles.icon} />
           </a>
           <a
-            href="https://www.linkedin.com/in/magdalena-głowienka-868685102"
+            href="https://www.linkedin.com/in/magdalena-glowienka"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"

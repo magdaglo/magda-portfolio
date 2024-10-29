@@ -1,44 +1,52 @@
-import React from "react";
-import styles from "./Projects.module.css";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import barterNetImage from "../../assets/barternet.png";
-// import placeholderImage from "../../assets/placeholder.png"; // Placeholder image for additional projects
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import styles from './Projects.module.css';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import barterNetImage from '../../assets/barternet.png';
 
 function Projects() {
   const projects = [
     {
-      title: "BarterNet",
+      title: 'BarterNet',
       description:
-        "A platform for exchanging goods and services, built collaboratively with a team.",
+        'A platform for exchanging goods and services, built collaboratively with a team.',
       image: barterNetImage,
       links: {
-        github: "https://github.com/infoshareacademy/jfdzr13-team-yellow",
-        live: "https://barternet.netlify.app/",
+        github: 'https://github.com/infoshareacademy/jfdzr13-team-yellow',
+        live: 'https://barternet.netlify.app/',
       },
     },
-    // {
-    //   title: "Project Two",
-    //   description: "A brief description of your second project.",
-    //   image: placeholderImage,
-    //   links: {
-    //     github: "https://github.com/yourusername/project-two",
-    //     live: "https://project-two-live-demo.com",
-    //   },
-    // },
     // Add more projects as needed
   ];
 
   return (
     <section className={styles.projects} id="projects">
-      <h2 className={styles.sectionTitle}>Projects</h2>
+      <Helmet>
+        <title>Projects - Magdalena Głowienka</title>
+        <meta
+          name="description"
+          content="Explore projects developed by Magdalena Głowienka, showcasing skills in frontend development."
+        />
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Projects - Magdalena Głowienka" />
+        <meta
+          property="og:description"
+          content="Discover the projects and collaborations of Magdalena Głowienka, a passionate Frontend Developer."
+        />
+        <meta property="og:image" content="URL_TO_YOUR_PROJECT_IMAGE" />
+        <meta property="og:url" content="https://your-domain.com/projects" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+      <h1 className={styles.sectionTitle}>Projects</h1>
       <div className={styles.projectsGrid}>
         {projects.map((project, index) => (
           <article className={styles.projectCard} key={index}>
             <div className={styles.imageContainer}>
               <img
                 src={project.image}
-                alt={project.title}
+                alt={`Screenshot of ${project.title}`}
                 className={styles.projectImage}
+                loading="lazy"
               />
               <div className={styles.overlay}>
                 <div className={styles.projectLinks}>
@@ -46,7 +54,7 @@ function Projects() {
                     href={project.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="GitHub"
+                    aria-label="GitHub Repository"
                   >
                     <FaGithub />
                   </a>
@@ -62,7 +70,7 @@ function Projects() {
               </div>
             </div>
             <div className={styles.projectContent}>
-              <h3>{project.title}</h3>
+              <h2>{project.title}</h2>
               <p>{project.description}</p>
             </div>
           </article>
