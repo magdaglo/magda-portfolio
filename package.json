@@ -34,5 +34,10 @@
   "reactSnap": {
     "source": "dist",
     "inlineCss": true
-  }
+  },
+
+  "engines": {
+  "node": ">=16.0.0"
+}
+
 }
